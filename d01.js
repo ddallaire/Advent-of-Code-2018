@@ -7,12 +7,12 @@ console.log(result);
 // Part two
 let i = 0;
 let currentFrequency = 0;
-let resultFrenquencies = [currentFrequency];
+let resultFrenquencies = new Map();
 let match = false;
 while (!match) {
   currentFrequency = currentFrequency + parseInt(lines[i], 10);
-  match = resultFrenquencies.includes(currentFrequency);
-  resultFrenquencies.push(currentFrequency);
+  match = resultFrenquencies.has(currentFrequency);
+  resultFrenquencies.set(currentFrequency, null);
   i = (i + 1) % lines.length;
 }
 console.log(currentFrequency);
